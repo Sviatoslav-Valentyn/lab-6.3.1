@@ -15,9 +15,7 @@ template<typename T>
 void Init(T* b, const int n)
 {
     for (int i = 0; i < n; i++)
-    {
         b[i] = -10 + rand() % 21;
-    }
 }
 
 void Print(int* b, const int n)
@@ -44,14 +42,13 @@ int Sum(int b[], const int n)
         s += b[i];
     return s;
 }
-template<typename T>
 
-int Sum(T b[], const int n) 
+template<typename T>
+T Sum(T b[], const int n) 
 {
     int s = 0;
     for (int i = 0; i < n; i++)
         s += b[i];
-    cout << "S = " << s << endl;
     return s;
 }
 
@@ -64,6 +61,7 @@ int main()
     Init<int>(b, n);
     Print<int>(b, n);
     Sum<int>(b, n);
+    cout << "S = " << Sum(b,n) << endl;
 
     delete[] b;
     b = nullptr;
